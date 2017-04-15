@@ -7,27 +7,25 @@ import {
   View,
   Button,
 } from 'react-native';
-import { NativeRouter, Route, Link } from 'react-router-native'
 
 export default class Home extends Component {
 
-  handleClick = () => {
-    console.log('click!')
-  }
+  static navigationOptions = {
+    title: 'Welcome',
+  };
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to Drug Alert!
         </Text>
-        <Link
-          to="/questions"
-          underlayColor='#f0f4f7'>
-            <Text style={styles.startButton}>
-              Start
-            </Text>
-        </Link>
+        <Button
+          onPress={() => navigate('Questions')}
+          title="Start"
+        />
       </View>
     );
   }

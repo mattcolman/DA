@@ -7,7 +7,6 @@ import {
   View,
   Button,
 } from 'react-native';
-import { NativeRouter, Route, Link } from 'react-router-native'
 
 export default class Questions extends Component {
 
